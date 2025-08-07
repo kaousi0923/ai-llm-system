@@ -81,6 +81,55 @@ python main.py
 
 服務將在 `http://localhost:5000` 啟動
 
+## 🔧 本機開發配置管理
+
+### 🚀 快速設置
+
+**方式一：一鍵設置（推薦）**
+```cmd
+# 執行快速設置腳本
+setup_local_dev.bat
+```
+
+**方式二：手動配置**
+```cmd
+# 複製配置範本
+copy .env.example .env
+
+# 編輯配置文件，填入真實的 API 金鑰
+notepad .env
+```
+
+### 🔑 必要的 API 金鑰配置
+
+在 `.env` 文件中設置以下金鑰：
+
+```env
+# OpenAI API 金鑰（用於 GPT 模型）
+OPENAI_API_KEY=sk-proj-your-openai-api-key
+
+# HuggingFace Token（用於下載模型）
+HF_TOKEN=hf_your-huggingface-token
+
+# 可選：自定義授權 Token
+AUTHORIZATION_TOKEN=Bearer-your-custom-token
+```
+
+### 🛡️ 安全特性
+
+- **🔒 Git 安全**：`.env` 文件被 `.gitignore` 忽略，不會推送到倉庫
+- **📋 配置優先級**：環境變數 > .env 文件 > config.ini > 默認值
+- **✅ 自動檢測**：啟動時自動檢查配置文件是否存在
+- **🧪 配置測試**：使用 `python test_config.py` 驗證配置
+
+### 🔧 配置測試
+
+```cmd
+# 測試配置是否正確載入（需在 conda 環境中）
+conda activate MIRDC_Unsloth_clone
+python test_config.py
+```
+
 ## 📖 使用指南
 
 ### API 文檔
@@ -152,9 +201,20 @@ response = requests.post('http://localhost:5000/api/train',
 ```
 ai_llm/
 ├── main.py                 # 主程式入口
-├── config.ini             # 配置檔案
+├── config.ini             # 配置檔案（已去敏感化）
+├── .env.example           # 環境變數範本
+├── .env                   # 本機環境變數（Git 忽略）
+├── setup_local_dev.bat    # 🆕 本機開發環境快速設置
+├── test_config.py         # 🆕 配置驗證腳本
+├── llm_api_start.bat      # 🔄 增強版啟動腳本
+├── docker/                # Docker 容器化相關
+│   ├── Dockerfile        # 開發環境容器配置
+│   ├── Dockerfile.prod   # 生產環境容器配置
+│   ├── docker-compose.yml # Docker Compose 編排
+│   ├── docker-deploy.sh  # Linux/macOS 部署腳本
+│   └── docker-deploy.bat # Windows 部署腳本
 ├── modules/               # 核心模組
-│   ├── config.py         # 配置管理
+│   ├── config.py         # 🔄 增強版配置管理（支援 .env）
 │   ├── file_processing.py # 文件處理
 │   ├── vector_db.py      # 向量資料庫
 │   ├── chat_history.py   # 對話歷史

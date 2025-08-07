@@ -2,6 +2,20 @@
 :: 切換到 .bat 檔案所在的目錄，避免相對路徑亂指
 cd /d "%~dp0"
 
+echo ========================================
+echo 🚀 RAG 系統本機啟動腳本
+echo ========================================
+
+:: 檢查 .env 文件是否存在
+if exist ".env" (
+    echo ✅ 發現 .env 配置文件，API 密鑰將從此文件讀取
+) else (
+    echo ⚠️  警告: 未發現 .env 文件
+    echo 💡 提示: 複製 .env.example 為 .env 並填入你的 API 密鑰
+    echo.
+    pause
+)
+
 :: 🧠 啟用 UTF-8 模式，避免 cp950 錯誤
 set PYTHONUTF8=1
 
@@ -35,11 +49,23 @@ if errorlevel 1 (
 :: 啟用虛擬環境
 CALL conda activate %VENV_NAME%
 
+:: 啟動提示
+echo.
+echo ========================================
+echo 🔥 正在啟動 RAG 系統...
+echo 📱 API 服務將在 http://localhost:5000 啟動
+echo 📖 API 文檔: http://localhost:5000/docs  
+echo ========================================
+echo.
+
 :: 執行 Python 腳本
 python %PYTHON_SCRIPT%
 
 :: 終止虛擬環境
 CALL conda deactivate
 
-echo Script execution completed.
+echo.
+echo ========================================
+echo 🛑 RAG 系統已停止運行
+echo ========================================
 pause
