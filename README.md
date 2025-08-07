@@ -38,7 +38,7 @@
 
 1. **克隆專案**
 ```bash
-git clone https://github.com/your-repo/ai-llm-rag.git
+git clone https://github.com/kaousi0923/ai-llm-rag.git
 cd ai-llm-rag
 ```
 
@@ -340,20 +340,16 @@ max_tokens = 2048
 
 ## 🐛 問題回報
 
-如遇到問題，請在 [Issues](https://github.com/your-repo/issues) 頁面回報，並提供：
+如遇到問題，請在 [Issues](https://github.com/kaousi0923/issues) 頁面回報，並提供：
 - 問題描述
 - 重現步驟
 - 錯誤訊息
 - 系統環境資訊
 
-## 📄 授權
-
-本專案採用 MIT 授權 - 詳見 [LICENSE](LICENSE) 檔案
-
 ## 👥 團隊
 
 - 開發團隊：MIRDC
-- 維護者：[Your Name]
+- 維護者：[kaousi0923]
 
 ## 🙏 致謝
 
