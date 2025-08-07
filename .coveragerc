@@ -1,0 +1,41 @@
+[run]
+source = .
+omit = 
+    */tests/*
+    */test_*
+    */__pycache__/*
+    */venv/*
+    */env/*
+    */site-packages/*
+    */migrations/*
+    manage.py
+    setup.py
+    conftest.py
+    */settings/*
+    */config/*
+    */dependencies/*
+    */unsloth_compiled_cache/*
+    */models--*/*
+    tunnel_setup.py
+    llm_*.bat
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if self.debug:
+    if settings.DEBUG
+    raise AssertionError
+    raise NotImplementedError
+    if 0:
+    if __name__ == .__main__.:
+    class .*\bProtocol\):
+    @(abc\.)?abstractmethod
+
+show_missing = True
+skip_covered = False
+precision = 2
+
+[html]
+directory = htmlcov
+title = AI/LLM RAG System Coverage Report

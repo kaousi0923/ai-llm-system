@@ -1,0 +1,15 @@
+chainlit==1.2.0
+langchain==0.3.3
+langchain-core==0.3.10
+filetype==1.2.0
+lazify==0.4.0
+python-dotenv==1.0.0
+python-multipart==0.0.9
+syncer==2.0.3
+fastapi==0.112.0
+numpy==1.26.0
+packaging==23.1
+starlette==0.37.2
+tenacity==8.2.3
+async-timeout==4.0.3
+fastapi-cdn-host

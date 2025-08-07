@@ -1,0 +1,77 @@
+# Git 相關文件
+.git
+.gitignore
+README.md
+*.md
+
+# 環境和配置
+.env
+.env.local
+.env.*.local
+*.log
+
+# Python 相關
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE 和編輯器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系統文件
+.DS_Store
+Thumbs.db
+*.tmp
+
+# 暫存和日誌目錄
+logs/
+temp_files/
+*.log
+*.out
+
+# 模型和數據（通過 volume 掛載）
+base_models/
+trained_models/
+vector_dbs/
+chat_history/
+
+# 批處理文件和 Windows 特有文件
+*.bat
+*.cmd
+
+# 測試相關文件
+tests/
+*_test.py
+test_*.py
+
+# 文檔和範例
+docs/
+examples/
+*.example
+
+# 監控配置（如果不使用的話）
+monitoring/
+
+# Docker 相關文件
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# 其他不必要的文件
+tunnel_setup.py
+*.bak
+*.backup
